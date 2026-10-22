@@ -41,3 +41,4 @@ edad = prompt('¿cual es tu edad?');
 console.log('edad:', edad);
 // Imprime la edad y su tipo de dato (usa typeof)
 // Pregúntate: ¿por qué el tipo no es "number"? porque esta en comillas
+console.log("Maria" ==="MarIa" && !false && 20>10);
