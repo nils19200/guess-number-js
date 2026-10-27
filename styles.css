@@ -1,3 +1,5 @@
+CSS
+
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
@@ -6,31 +8,49 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+  /* === CAMBIOS PARA LA IMAGEN DE FONDO === */
+  background-image: url('tienda-hotwheels.jpg'); /* Nombre del archivo de imagen */
+  background-size: cover; /* Cubre toda la pantalla */
+  background-position: center; /* Centra la imagen */
+  background-repeat: no-repeat; /* No repite la imagen */
+  background-attachment: fixed; /* Mantiene el fondo fijo al hacer scroll */
+  /* Capa de tinte oscuro para mejorar la legibilidad del texto */
+  background-blend-mode: multiply;
+  background-color: rgba(0, 8, 24, 0.4); /* Tinte azul oscuro sutil */
+  /* ======================================== */
   color: #eee;
   padding: 20px;
 }
+
 .game-card {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(233, 69, 96, 0.3);
+  /* Estilo de tarjeta con bordes de fuego/llama característicos de Hot Wheels (Azul y Naranja Fuego) */
+  background: rgba(11, 31, 74, 0.9); /* Ligeramente más opaco para legibilidad */
+  border: 2px solid #f97316;
   border-radius: 20px;
   padding: 40px 30px;
   max-width: 420px;
   width: 100%;
   text-align: center;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 8px 32px rgba(249, 115, 22, 0.4), 0 0 20px rgba(0, 102, 204, 0.6);
+  backdrop-filter: blur(8px);
   transition: border-color 0.5s, box-shadow 0.5s;
 }
 
 h1 {
-  color: #e94560;
-  font-size: 1.8rem;
+  /* Estilo tipografía llamativa Hot Wheels (Naranja brillante con sombra) */
+  color: #f97316;
+  font-size: 1.9rem;
   margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
 }
 
 .subtitle {
-  color: #aaa;
+  color: #93c5fd;
   margin-bottom: 24px;
+  font-weight: 500;
+  font-size: 0.95rem;
 }
 
 .controls {
@@ -45,17 +65,19 @@ input {
   font-size: 18px;
   width: 100px;
   text-align: center;
-  border: 2px solid rgba(233, 69, 96, 0.4);
+  border: 2px solid #3b82f6;
   border-radius: 12px;
-  background: rgba(255, 255, 255, 0.05);
-  color: #eee;
+  background: rgba(15, 23, 42, 0.8);
+  color: #fff;
   outline: none;
   transition: border-color 0.3s, box-shadow 0.3s;
 }
+
 input:focus {
-  border-color: #e94560;
-  box-shadow: 0 0 12px rgba(233, 69, 96, 0.3);
+  border-color: #f97316;
+  box-shadow: 0 0 12px rgba(249, 115, 22, 0.5);
 }
+
 /* Ocultar flechas del input numérico */
 input::-webkit-inner-spin-button,
 input::-webkit-outer-spin-button { -webkit-appearance: none; }
@@ -64,40 +86,55 @@ input[type=number] { -moz-appearance: textfield; }
 button {
   padding: 12px 24px;
   font-size: 18px;
-  background-color: #e94560;
+  font-weight: bold;
+  /* Botón con el clásico rojo/naranja fuego de las cajas Hot Wheels */
+  background: linear-gradient(135deg, #ef4444, #f97316);
   color: white;
   border: none;
   border-radius: 12px;
   cursor: pointer;
-  transition: transform 0.2s, background-color 0.3s;
+  transition: transform 0.2s, filter 0.3s, box-shadow 0.3s;
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.4);
 }
+
 button:hover {
-  background-color: #d63d56;
+  filter: brightness(1.15);
   transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(249, 115, 22, 0.6);
 }
+
 button:active { transform: translateY(1px); }
+
 button:disabled {
   opacity: 0.5;
   cursor: not-allowed;
   transform: none;
+  box-shadow: none;
 }
 
 #mensaje {
-  font-size: 24px;
+  font-size: 22px;
   margin: 20px 0;
   min-height: 40px;
+  font-weight: bold;
   transition: font-size 0.3s;
 }
 
+#contador {
+  font-size: 15px;
+  color: #cbd5e1;
+}
+
 #historial {
-  margin-top: 20px;
+  margin-top: 10px;
   font-size: 14px;
-  color: #aaa;
+  color: #93c5fd;
 }
 
 #btnReiniciar {
-  background-color: #0f3460;
+  background: linear-gradient(135deg, #1d4ed8, #3b82f6);
   margin-top: 12px;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
 }
 
 @media (max-width: 480px) {
