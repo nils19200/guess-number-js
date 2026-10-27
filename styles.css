@@ -1,233 +1,108 @@
-/* ==========================================
-   ESTILOS GENERALES Y VARIABLES
-   ========================================== */
-:root {
-  --primary: #6c5ce7;
-  --secondary: #a29bfe;
-  --accent: #fd79a8;
-  --bg-dark: #0f172a;
-  --card-bg: rgba(30, 41, 59, 0.85);
-  --text-light: #f8fafc;
-  --text-muted: #94a3b8;
-}
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  font-family: 'Poppins', sans-serif;
-}
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
-  background-color: var(--bg-dark);
-  color: var(--text-light);
+  font-family: 'Segoe UI', Arial, sans-serif;
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow-x: hidden;
-  position: relative;
+  background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+  color: #eee;
   padding: 20px;
 }
-
-/* ==========================================
-   ANIMACIONES Y FONDOS DECORATIVOS
-   ========================================== */
-.bg-decoration {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(80px);
-  z-index: 0;
-  animation: floatBg 8s ease-in-out infinite alternate;
-}
-
-.shape-1 {
-  width: 300px;
-  height: 300px;
-  background: var(--primary);
-  top: 10%;
-  left: 15%;
-}
-
-.shape-2 {
-  width: 250px;
-  height: 250px;
-  background: var(--accent);
-  bottom: 10%;
-  right: 15%;
-  animation-delay: -4s;
-}
-
-@keyframes floatBg {
-  0% { transform: translateY(0) scale(1); }
-  100% { transform: translateY(-30px) scale(1.1); }
-}
-
-/* ==========================================
-   TARJETA PRINCIPAL DEL JUEGO
-   ========================================== */
 .game-card {
-  position: relative;
-  z-index: 1;
-  background: var(--card-bg);
-  backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 24px;
-  padding: 40px 30px;
-  width: 100%;
-  max-width: 450px;
-  text-align: center;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
-  animation: cardAppear 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-@keyframes cardAppear {
-  0% {
-    opacity: 0;
-    transform: translateY(40px) scale(0.95);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
-}
-
-/* ==========================================
-   ENCABEZADO
-   ========================================== */
-.badge {
-  display: inline-block;
-  background: rgba(108, 92, 231, 0.2);
-  color: var(--secondary);
-  border: 1px solid var(--primary);
-  font-size: 0.8rem;
-  font-weight: 600;
-  padding: 4px 12px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(233, 69, 96, 0.3);
   border-radius: 20px;
-  margin-bottom: 12px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
+  padding: 40px 30px;
+  max-width: 420px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  transition: border-color 0.5s, box-shadow 0.5s;
 }
 
 h1 {
-  font-size: 2.2rem;
-  font-weight: 800;
-  background: linear-gradient(135deg, #fff 30%, var(--secondary));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  margin-bottom: 5px;
-}
-
-h2 {
-  font-size: 1rem;
-  font-weight: 400;
-  color: var(--text-muted);
-  margin-bottom: 25px;
-}
-
-.author-name {
-  color: var(--accent);
-  font-weight: 600;
-  letter-spacing: 0.5px;
-}
-
-/* ==========================================
-   IMAGEN Y ANIMACIÓN DEL JUEGO
-   ========================================== */
-.image-container {
-  position: relative;
-  width: 180px;
-  height: 180px;
-  margin: 0 auto 25px;
-}
-
-.game-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 50%;
-  border: 4px solid var(--primary);
-  box-shadow: 0 0 25px rgba(108, 92, 231, 0.5);
-  animation: pulseGlow 3s infinite alternate;
-}
-
-.floating-icon {
-  position: absolute;
-  top: -10px;
-  right: -5px;
-  background: var(--accent);
-  font-size: 1.5rem;
-  width: 45px;
-  height: 45px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 50%;
-  box-shadow: 0 5px 15px rgba(253, 121, 168, 0.4);
-  animation: floatIcon 2.5s ease-in-out infinite alternate;
-}
-
-@keyframes pulseGlow {
-  0% { box-shadow: 0 0 15px rgba(108, 92, 231, 0.4); }
-  100% { box-shadow: 0 0 30px rgba(108, 92, 231, 0.8); }
-}
-
-@keyframes floatIcon {
-  0% { transform: translateY(0) rotate(0deg); }
-  100% { transform: translateY(-12px) rotate(15deg); }
-}
-
-/* ==========================================
-   INSTRUCCIONES Y BOTÓN
-   ========================================== */
-.instructions {
-  margin-bottom: 25px;
-}
-
-.instructions p {
-  font-size: 1.1rem;
-  color: var(--text-light);
+  color: #e94560;
+  font-size: 1.8rem;
+  margin-bottom: 8px;
 }
 
 .subtitle {
-  font-size: 0.9rem !important;
-  color: var(--text-muted) !important;
-  margin-top: 5px;
+  color: #aaa;
+  margin-bottom: 24px;
 }
 
-.btn-play {
-  background: linear-gradient(135deg, var(--primary), var(--accent));
-  color: #fff;
+.controls {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+input {
+  padding: 12px;
+  font-size: 18px;
+  width: 100px;
+  text-align: center;
+  border: 2px solid rgba(233, 69, 96, 0.4);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.05);
+  color: #eee;
+  outline: none;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+input:focus {
+  border-color: #e94560;
+  box-shadow: 0 0 12px rgba(233, 69, 96, 0.3);
+}
+/* Ocultar flechas del input numérico */
+input::-webkit-inner-spin-button,
+input::-webkit-outer-spin-button { -webkit-appearance: none; }
+input[type=number] { -moz-appearance: textfield; }
+
+button {
+  padding: 12px 24px;
+  font-size: 18px;
+  background-color: #e94560;
+  color: white;
   border: none;
-  padding: 14px 32px;
-  font-size: 1.1rem;
-  font-weight: 600;
   border-radius: 12px;
   cursor: pointer;
-  width: 100%;
-  transition: all 0.3s ease;
-  box-shadow: 0 8px 20px rgba(108, 92, 231, 0.3);
+  transition: transform 0.2s, background-color 0.3s;
+}
+button:hover {
+  background-color: #d63d56;
+  transform: translateY(-2px);
+}
+button:active { transform: translateY(1px); }
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
 }
 
-.btn-play:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 12px 25px rgba(253, 121, 168, 0.5);
+#mensaje {
+  font-size: 24px;
+  margin: 20px 0;
+  min-height: 40px;
+  transition: font-size 0.3s;
 }
 
-.btn-play:active {
-  transform: translateY(1px);
+#historial {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #aaa;
 }
 
-/* ==========================================
-   PIE DE PÁGINA
-   ========================================== */
-footer {
-  margin-top: 30px;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  padding-top: 15px;
+#btnReiniciar {
+  background-color: #0f3460;
+  margin-top: 12px;
 }
 
-footer p {
-  font-size: 0.8rem;
-  color: var(--text-muted);
+@media (max-width: 480px) {
+  .game-card { padding: 30px 20px; }
+  .controls { flex-direction: column; align-items: center; }
+  input { width: 80%; }
+  button { width: 80%; }
 }

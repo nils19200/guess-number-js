@@ -3,52 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Adivina el Número | NILS BUSTAMANTE</title>
+  <title>Adivina el Número</title>
   <link rel="stylesheet" href="styles.css">
-  <!-- Fuentes externas para mejorar la tipografía -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
 </head>
 <body>
+  <div class="game-card" id="game-card">
+    <h1>🎯 Adivina el Número</h1>
+    <p class="subtitle">Estoy pensando en un número del 1 al 100...</p>
 
-  <!-- Elementos flotantes decorativos en el fondo -->
-  <div class="bg-decoration shape-1"></div>
-  <div class="bg-decoration shape-2"></div>
+    <div class="controls">
+      <input type="number" id="inputIntento" min="1" max="100" placeholder="?">
+      <button id="btnAdivinar">Adivinar</button>
+    </div>
 
-  <main class="game-card">
-    <header class="game-header">
-      <span class="badge">Juego de Lógica</span>
-      <h1>Adivina el Número</h1>
-      <h2>Creado por: <span class="author-name">NILS BUSTAMANTE</span></h2>
-    </header>
+    <p id="mensaje"></p>
+    <p id="contador">Intentos: 0</p>
+    <p id="historial">Historial: </p>
 
-    <section class="game-body">
-      <!-- Ilustración animada relacionada al juego -->
-      <div class="image-container">
-        <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=500&auto=format&fit=crop" 
-             alt="Misterio y Números" 
-             class="game-image">
-        <div class="floating-icon">❓</div>
-      </div>
+    <button id="btnReiniciar" style="display: none;">
+      🔄 Jugar de nuevo
+    </button>
+  </div>
 
-      <div class="instructions">
-        <p>Encuentra el número secreto del <strong>1 al 100</strong>.</p>
-        <p class="subtitle">¡Pon a prueba tu intuición en 2 intentos!</p>
-      </div>
-
-      <!-- Botón para iniciar/reiniciar el juego recargando la página -->
-      <button class="btn-play" onclick="window.location.reload();">
-        <span>🎮 ¡Jugar Ahora!</span>
-      </button>
-    </section>
-
-    <footer>
-      <p>Mi primer programa en JavaScript &copy; NILS BUSTAMANTE</p>
-    </footer>
-  </main>
-
-  <!-- Conexión del script sin modificaciones -->
   <script src="script.js"></script>
 </body>
 </html>
