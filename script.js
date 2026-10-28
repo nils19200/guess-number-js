@@ -18,7 +18,7 @@ function mostrarMensaje(texto, color) {
 }
 
 // Mensaje de bienvenida inicial
-mostrarMensaje('¡Listo para competir en Hot Wheels!', '#93c5fd');
+mostrarMensaje('¡Listo para competir por un Hot Wheels!', '#93c5fd');
 
 // --- Variables del juego ---
 let numeroSecreto = Math.floor(Math.random() * 100) + 1;
