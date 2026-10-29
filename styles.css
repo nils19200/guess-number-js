@@ -1,6 +1,10 @@
 CSS
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 body {
   font-family: 'Segoe UI', Arial, sans-serif;
@@ -9,61 +13,61 @@ body {
   justify-content: center;
   align-items: center;
   /* === CAMBIOS PARA LA IMAGEN DE FONDO === */
-  background-image: url('tienda-hotwheels.jpg'); /* Nombre del archivo de imagen */
-  background-size: cover; /* Cubre toda la pantalla */
-  background-position: center; /* Centra la imagen */
-  background-repeat: no-repeat; /* No repite la imagen */
-  background-attachment: fixed; /* Mantiene el fondo fijo al hacer scroll */
-  /* Capa de tinte oscuro para mejorar la legibilidad del texto */
+  background-image: url('tienda-hotwheels.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   background-blend-mode: multiply;
-  background-color: rgba(0, 8, 24, 0.4); /* Tinte azul oscuro sutil */
-  /* ======================================== */
+  background-color: rgba(0, 8, 24, 0.4);
   color: #eee;
-  padding: 20px;
+  padding: 16px;
 }
 
 .game-card {
-  /* Estilo de tarjeta con bordes de fuego/llama característicos de Hot Wheels (Azul y Naranja Fuego) */
-  background: rgba(11, 31, 74, 0.9); /* Ligeramente más opaco para legibilidad */
+  background: rgba(11, 31, 74, 0.9);
   border: 2px solid #f97316;
   border-radius: 20px;
-  padding: 40px 30px;
-  max-width: 420px;
+  padding: 30px 24px;
   width: 100%;
+  max-width: 420px;
   text-align: center;
   box-shadow: 0 8px 32px rgba(249, 115, 22, 0.4), 0 0 20px rgba(0, 102, 204, 0.6);
   backdrop-filter: blur(8px);
-  transition: border-color 0.5s, box-shadow 0.5s;
+  transition: border-color 0.5s, box-shadow 0.5s, padding 0.3s;
 }
 
 h1 {
-  /* Estilo tipografía llamativa Hot Wheels (Naranja brillante con sombra) */
   color: #f97316;
-  font-size: 1.9rem;
+  /* Tamaño fluido de texto */
+  font-size: clamp(1.4rem, 5vw, 1.9rem);
   margin-bottom: 8px;
   text-transform: uppercase;
   letter-spacing: 1px;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+  word-break: break-word;
 }
 
 .subtitle {
   color: #93c5fd;
   margin-bottom: 24px;
   font-weight: 500;
-  font-size: 0.95rem;
+  font-size: clamp(0.85rem, 2.5vw, 0.95rem);
 }
 
 .controls {
   display: flex;
   gap: 10px;
   justify-content: center;
+  align-items: center;
   margin-bottom: 20px;
+  flex-wrap: wrap;
 }
 
 input {
   padding: 12px;
   font-size: 18px;
-  width: 100px;
+  width: 110px;
   text-align: center;
   border: 2px solid #3b82f6;
   border-radius: 12px;
@@ -80,14 +84,18 @@ input:focus {
 
 /* Ocultar flechas del input numérico */
 input::-webkit-inner-spin-button,
-input::-webkit-outer-spin-button { -webkit-appearance: none; }
-input[type=number] { -moz-appearance: textfield; }
+input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type=number] {
+  -moz-appearance: textfield;
+}
 
 button {
   padding: 12px 24px;
   font-size: 18px;
   font-weight: bold;
-  /* Botón con el clásico rojo/naranja fuego de las cajas Hot Wheels */
   background: linear-gradient(135deg, #ef4444, #f97316);
   color: white;
   border: none;
@@ -95,6 +103,7 @@ button {
   cursor: pointer;
   transition: transform 0.2s, filter 0.3s, box-shadow 0.3s;
   box-shadow: 0 4px 12px rgba(239, 68, 68, 0.4);
+  touch-action: manipulation;
 }
 
 button:hover {
@@ -103,7 +112,9 @@ button:hover {
   box-shadow: 0 6px 16px rgba(249, 115, 22, 0.6);
 }
 
-button:active { transform: translateY(1px); }
+button:active {
+  transform: translateY(1px);
+}
 
 button:disabled {
   opacity: 0.5;
@@ -113,11 +124,12 @@ button:disabled {
 }
 
 #mensaje {
-  font-size: 22px;
-  margin: 20px 0;
+  font-size: clamp(1.1rem, 4vw, 1.375rem);
+  margin: 16px 0;
   min-height: 40px;
   font-weight: bold;
   transition: font-size 0.3s;
+  word-break: break-word;
 }
 
 #contador {
@@ -129,17 +141,50 @@ button:disabled {
   margin-top: 10px;
   font-size: 14px;
   color: #93c5fd;
+  word-break: break-word;
 }
 
 #btnReiniciar {
   background: linear-gradient(135deg, #1d4ed8, #3b82f6);
   margin-top: 12px;
   box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+  width: 100%;
+  max-width: 240px;
 }
 
+/* === MEDIA QUERIES (RESPONSIVIDAD DISPOSITIVOS MOVILES) === */
+
 @media (max-width: 480px) {
-  .game-card { padding: 30px 20px; }
-  .controls { flex-direction: column; align-items: center; }
-  input { width: 80%; }
-  button { width: 80%; }
+  body {
+    /* Desactiva el fixed en teléfonos para evitar problemas de rendimiento y renderizado */
+    background-attachment: scroll;
+    padding: 12px;
+  }
+
+  .game-card {
+    padding: 24px 16px;
+    border-radius: 16px;
+  }
+
+  .controls {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  input, 
+  .controls button {
+    width: 100%;
+    max-width: 260px;
+  }
+}
+
+@media (max-width: 360px) {
+  .game-card {
+    padding: 20px 12px;
+  }
+
+  button, input {
+    font-size: 16px;
+    padding: 10px;
+  }
 }
